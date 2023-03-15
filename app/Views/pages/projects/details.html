@@ -1,0 +1,79 @@
+{% extends "layout/body.html" %}
+
+{# NO details
+{% set title = project.get_acronym %}
+#}
+{% block header %} {% endblock %}
+
+{% block main %}
+
+<section class="clean-block clean-services dark">
+  <div class="container">
+
+    <div class="block-content mt-5">
+      <h3 class="text-center text-primary h4">{{ project.get_title }}</h3>
+      <hr class="bg-primary">
+        <!-- NO PORJECT IMAGES
+        <div class="col-lg-5 justify-content-center align-content-center text-center align-self-center">
+          <img class="rounded img-fluid" src="{{ project.get_logo }}" alt="Project image">
+        </div>
+        -->
+        <div class="row">
+          <h5>Agency:</h5>
+          <p>{{ project.get_agency }}</p>
+        </div>
+        <div class="row">
+          <h5 >Years:</h5>
+          <p >{{ project.get_years }}</p>
+        </div>
+        <div class="row">
+          <h5 >Grant number:</h5>
+          <p >{{ project.get_grant_number }}</p>
+        </div>
+        <div class="row">
+          <h5 >Total funding amount:</h5>
+          <p >{{ project.get_total_funding_amount }}</p>
+        </div>
+        <div class="row">
+          <h5 >Partners:</h5>
+          <p>{{ project.get_partners }}</p>
+        </div>
+
+          <!-- tags -->
+          {% if project.get_idtag %}
+          <div class="text-center">
+              {% for tag in project.get_idtag %}
+              <div class="justify-content-left align-items-left d-inline-flex align-content-left"
+                style="margin-right: 9px;">
+                {% if tag.get_area_link %}
+                <div
+                  style="color: {{ tag.get_color }};background: {{ tag.get_color }};width: 15px;height: 15px;border-radius: 4px;opacity: 0.70;">
+                </div>
+                <a href="{{ tag.get_area_link }}">
+                  <span class="tags-color" style="color: #ed196d;opacity: 0.90;">{{ tag.get_name }}</span>
+                </a>
+                {% else %}
+                <div
+                  style="color: {{ tag.get_color }};background: {{ tag.get_color }};width: 15px;height: 15px;border-radius: 4px;opacity: 0.70;">
+                </div>
+                <span class="tags-color" style="color: #ed196d;opacity: 0.90;">{{ tag.get_name }}</span>
+                {% endif %}
+              </div>
+              {% endfor %}
+
+            </div>
+          {% endif %}
+
+      <div class="mt-5">
+        <h4 class="mb-0 text-left text-primary">Description</h4>
+        <hr class="mt-0" />
+      </div>
+
+      <div class="mx-2 text-justify">
+        <p>{{ project.get_description | markdown_to_html }}</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

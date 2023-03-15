@@ -1,0 +1,37 @@
+{% if maxPages > 1 %}
+
+<style>
+  .active .page-link:hover {
+    color: white;
+    background-color: #922B54 !important;
+  }
+
+  .active .page-link {
+    background-color: #ed196d !important;
+    border-color: #ed196d !important;
+  }
+</style>
+
+<ul class="pagination">
+  {%if thisPage > 1 %}
+  <li class="page-item">
+    <a class="page-link"
+      href="/{{ routeRoot }}/index/{{ thisPage-1 < 1 ? 1 : thisPage-1 }}{% if where %}?{{where}}{% endif %}">«</a>
+  </li>
+  {% endif %}
+
+  {# Render each page number #}
+  {% for i in 1..maxPages %}
+  <li class="page-item {% if thisPage == i %}active{% endif %}">
+    <a class="page-link" href="/{{ routeRoot }}/index/{{ i }}{% if where %}?{{where}}{% endif %}">{{ i }}</a>
+  </li>
+  {% endfor %}
+
+  {# `»` arrow #}
+  {%if thisPage < maxPages %} <li class="page-item">
+    <a class="page-link"
+      href="/{{ routeRoot }}/index/{{ thisPage+1 <= maxPages ? thisPage+1 : thisPage }}{% if where %}?{{where}}{% endif %}">»</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}

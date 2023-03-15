@@ -1,0 +1,35 @@
+{% extends "layout/body.html" %}
+{% block main %}
+<div class="container">
+  <!-- Filtros -->
+  <div class="d-flex mt-5">{% include 'pages/publications/partials/filters.html' %}</div>
+  <!-- fin Filtros -->
+
+  <!-- tarjetas -->
+  {% if publications == null %}
+  <div class="bg-light p-3 border my-4">
+      <h4 class="text-center">There are no results.</h4>
+  </div>
+  {% else %}
+  <div class="my-2">
+    {% for publication in publications %} {% include 'pages/publications/partials/publicationCard.html' %} {% endfor %}
+  </div>
+  {% endif %}
+  <!-- end tarjetas -->
+
+  {% set routeRoot = "publications" %} {% if maxPages and thisPage %}
+  <div class="d-flex justify-content-center">{% include 'layout/components/pagination.html' %}</div>
+  {% endif%}
+</div>
+
+  {% block extraScript %}
+<script>
+  function copyClipboard(texto) {
+    navigator.clipboard.writeText(texto);
+
+    /* Alert the copied text */
+    alert("Cite copied: " + texto);
+  }
+</script>
+  {% endblock %}
+{% endblock %}

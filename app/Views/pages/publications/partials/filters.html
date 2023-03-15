@@ -1,0 +1,49 @@
+<div class="dropdown me-2">
+  <button class="btn btn-primary text-white fw-bold dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown"
+    id="dropdown-1" type="button">Years</button>
+  <div class="dropdown-menu" aria-labelledby="dropdown-1">
+    {% for year in years %}
+    <a class="dropdown-item" href="/publications/index?year={{ year }}">{{ year }}</a>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="dropdown me-2">
+  <button class="btn btn-primary text-white fw-bold dropdown-toggle " aria-expanded="false" data-bs-toggle="dropdown"
+    type="button">Types</button>
+  <div class="dropdown-menu">
+    {% for type in types %}
+    <a class="dropdown-item" href="/publications/index?type={{ type }}">
+      {% if type == 1 %}
+      <span style="color: black">Journals</span>
+      {% elseif type == 2 %}
+      <span style="color: black">Conferences</span>
+      {% else %}
+      <span style="color: black">Books</span>
+      {% endif %}
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="dropdown me-2">
+  <button class="btn btn-primary text-white fw-bold dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown"
+    type="button">Areas</button>
+  <div class="dropdown-menu">
+    {% for tag in tags %}
+    <a class="dropdown-item" href="/publications/index?idtag={{ tag.get_idtag }}">{{ tag.get_name }}</a>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="dropdown me-2">
+  <button class="btn btn-primary text-white fw-bold dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown"
+    type="button">Users</button>
+  <div class="dropdown-menu">
+    {% for user in users %}
+    <a class="dropdown-item" href="/publications/index?iduser={{ user.get_iduser }}">{{ user.get_name }}</a>
+    {% endfor %}
+  </div>
+</div>
+
+<a class="btn btn-outline-primary fw-bold" href="/publications/index">Reset</a>

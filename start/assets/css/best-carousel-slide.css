@@ -1,0 +1,121 @@
+div.jumbotron.carousel-hero {
+  color: #fff;
+  text-align: center;
+  /*background-size: cover;*/
+  background-position: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  margin-bottom: 0;
+}
+
+div.jumbotron.hero-1 {
+  background-image: url('../../assets/img/carousel/18.png');
+}
+
+div.jumbotron.hero-2 {
+  background-image: url('../../assets/img/carousel/19.png');
+}
+
+div.jumbotron.hero-3 {
+  background-image: url('../../assets/img/carousel/28.png');
+}
+
+div.jumbotron.hero-4 {
+  background-image: url('../../assets/img/carousel/4.png');
+}
+
+div.jumbotron.hero-5 {
+  background-image: url('../../assets/img/carousel/5.png');
+}
+
+div.jumbotron.hero-6 {
+  background-image: url('../../assets/img/carousel/14.png');
+}
+
+div.jumbotron.hero-7 {
+  background-image: url('../../assets/img/carousel/3.png');
+}
+
+div.jumbotron.hero-8 {
+  background-image: url('../../assets/img/carousel/36.png');
+}
+
+h1.hero-title, h2.hero-title, h3.hero-title {
+  text-shadow: 0 3px 3px rgba(0,0,0,0.4);
+  color: #fff;
+}
+
+p.hero-subtitle {
+  max-width: 600px;
+  margin: 25px auto;
+  padding: 10px 15px;
+  color: #fff;
+}
+
+.plat {
+  border-radius: 0px;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+  box-shadow: 0 0 0 0 #048f83!important;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #016090;
+  border-color: #016090;
+}
+
+.btn.btn-primary {
+  background-color: #ed196d!important;
+  border-color: #ed196d!important;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+  box-shadow: 0 0 0 .2rem rgba(0,123,255,.5);
+}
+
+* {
+  /*box-sizing: inherit;*/
+}
+
+*:before, *:after {
+  /*box-sizing: inherit;*/
+}
+
+span {
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .carousel-control-next, .carousel-control-prev {
+    transition: none;
+  }
+}
+
+.carousel-control-next, .carousel-control-prev {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 15%;
+  color: #fff;
+  text-align: center;
+  opacity: .5;
+  transition: opacity .15s ease;
+}
+
+.carousel-control-next:focus, .carousel-control-next:hover, .carousel-control-prev:focus, .carousel-control-prev:hover {
+  color: #fff;
+  text-decoration: none;
+  outline: 0;
+  opacity: .9;
+}
+

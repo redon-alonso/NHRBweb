@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# redirecciona assets hacia public
+RewriteRule ^assets/(.+)$ public/assets/$1 [QSA,L]
+RewriteRule ^resources/(.+)$ public/resources/$1 [QSA,L]
+
+# Todo el resto lo redirecciona hacia el punto de entrada
+DirectoryIndex start/index.php 
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+
+RewriteRule ^(.+)$ start/index.php [QSA,L]
+
+# Evita reportar errores
+#php_flag display_errors off

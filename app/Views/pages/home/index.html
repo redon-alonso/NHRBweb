@@ -1,0 +1,158 @@
+{% extends "layout/body.html" %} {% block header %}
+<div class="row">
+  <div class="offset-md-2 col-md-8 offset-md-2">
+    <section class="pt-3 text-white clean-block clean-info dark">
+
+      <!-- carousel -->
+
+      {% include '/layout/components/carousel.html' %}
+      <!-- end carousel -->
+
+    </section>
+  </div>
+</div>
+{% endblock %} {% block main %}
+<div class="py-5 row">
+  <div class="col-sm-10 col-lg-10 col-xl-8 mx-auto">
+    <p class="font-size-14 text-dark text-justify ">
+      The Neurorehabilitation and Brain Research Group is a multidisciplinary
+      team focused on assessing and
+      promoting the recovery of brain function after an injury and on examining
+      the underlying mechanisms of
+      different brain processes. The group involves researchers from&nbsp; <a
+        href="http://www.http//i3b.upv.es/nrhbs"><span>i3B Institute</span></a>&nbsp;and&nbsp;
+      <a
+        href="http://www.labpsitec.uji.es/esp/index.php"><span>Labpsitec</span></a>,
+      and maintains close
+      collaborations with other national and international entities. </p>
+  </div>
+</div>
+
+<section class="px-3 pb-5"
+  style="background-image: url('/resources/uploads/img/trencadis.svg');
+  background-size: contain;">
+  <h2 class="py-2 bg-white font-weight-bold rounded shadow-sm text-center
+    text-primary">Areas</h2>
+  <div class="row">
+
+    <!-- card 1 -->
+    <div class="col-md-4 col-sm-6 mt-4">
+      <div class="card h-100 mb-3">
+        <a href="/areas/show/balance" class="card-img-top">
+          <img alt="balance icon" width="700" height="480" class="img-fluid"
+            style="border-top-left-radius: 14px; border-top-right-radius: 14px;"
+            src="/resources/uploads/project/balance-768x768.png" />
+        </a>
+        <hr />
+        <div class="card-body">
+          <h3 class="h5 text-center">Balance</h3>
+        </div>
+        <div class="card-footer d-flex justify-content-between py-2 px-3 small">
+          <a href="/areas/show/balance" class="btn btn-outline-primary ms-auto">More</a>
+        </div>
+      </div>
+    </div>
+    <!-- end card 1 -->
+
+    <!-- card 2 -->
+    <div class="col-md-4 col-sm-6 mt-4">
+      <div class="card h-100 mb-3">
+        <a href="/areas/show/upper" class="card-img-top">
+          <img alt="upper limb icon" width="700" height="480" class="img-fluid"
+            style="border-top-left-radius: 14px; border-top-right-radius: 14px;"
+            src="/resources/uploads/project/upperlimb2-768x768.png" />
+        </a>
+        <hr />
+        <div class="card-body">
+          <h3 class="h5 text-center">Upper limb</h3>
+        </div>
+        <div class="card-footer d-flex justify-content-between py-2 px-3 small">
+          <a href="/areas/show/upper" class="btn btn-outline-primary ms-auto">More</a>
+        </div>
+      </div>
+    </div>
+    <!-- end card 2 -->
+
+    <!-- card 3 -->
+    <div class="col-md-4 col-sm-6 mt-4">
+      <div class="card h-100 mb-3">
+        <a href="/areas/show/unilateral" class="card-img-top">
+          <img alt="unilateral spacial neglect icon" width="700" height="480"
+            class="img-fluid"
+            style="border-top-left-radius: 14px; border-top-right-radius: 14px;"
+            src="/resources/uploads/project/neglectorsobt-768x768.png" />
+        </a>
+        <hr />
+        <div class="card-body">
+          <h3 class="h5 text-center">Unilateral spacial neglect</h3>
+        </div>
+        <div class="card-footer d-flex justify-content-between py-2 px-3 small">
+          <a href="/areas/show/unilateral" class="btn btn-outline-primary
+            ms-auto">More</a>
+        </div>
+      </div>
+    </div>
+    <!-- end card 3 -->
+
+    <!-- card 4 -->
+    <div class="col-md-4 col-sm-6 mt-4">
+      <div class="card h-100 mb-3">
+        <a href="/areas/show/self" class="card-img-top">
+          <img alt="self awareness icon" width="700" height="480"
+            class="img-fluid"
+            style="border-top-left-radius: 14px; border-top-right-radius: 14px;"
+            src="/resources/uploads/project/selfawarenes4-768x768.png" />
+        </a>
+        <hr />
+        <div class="card-body">
+          <h3 class="h5 text-center">Self-awareness</h3>
+        </div>
+        <div class="card-footer d-flex justify-content-between py-2 px-3 small">
+          <a href="/areas/show/self" class="btn btn-outline-primary ms-auto">More</a>
+        </div>
+      </div>
+    </div>
+    <!-- end card 4 -->
+
+    <!-- card 5 -->
+    <div class="col-md-4 col-sm-6 mt-4">
+      <div class="card h-100 mb-3">
+        <a href="/areas/show/disorders" class="card-img-top">
+          <img alt="Disorders icon" width="700" height="480" class="img-fluid"
+            style="border-top-left-radius: 14px; border-top-right-radius: 14px;"
+            src="/resources/uploads/project/alterados-768x768.png" />
+        </a>
+        <hr />
+        <div class="card-body">
+          <h3 class="h5 text-center">Disorders of consciousness</h3>
+        </div>
+        <div class="card-footer d-flex justify-content-between py-2 px-3 small">
+          <a href="/areas/show/disorders" class="btn btn-outline-primary
+            ms-auto">More</a>
+        </div>
+      </div>
+    </div>
+    <!-- end card 5 -->
+
+    <!-- card 6 -->
+    <div class="col-md-4 col-sm-6 mt-4">
+      <div class="card h-100 mb-3">
+        <a href="/areas/show/techno" class="card-img-top">
+          <img alt="tenological research icon" width="700" height="480"
+            class="img-fluid"
+            style="border-top-left-radius: 14px; border-top-right-radius: 14px;"
+            src="/resources/uploads/project/engranaje-768x768.png" />
+        </a>
+        <hr />
+        <div class="card-body">
+          <h3 class="h5 text-center">Technological research</h3>
+        </div>
+        <div class="card-footer d-flex justify-content-between py-2 px-3 small">
+          <a href="/areas/show/techno" class="btn btn-outline-primary ms-auto">More</a>
+        </div>
+      </div>
+    </div>
+    <!-- end card 6 -->
+  </div>
+</section>
+{% endblock %}

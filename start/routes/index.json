@@ -1,0 +1,24 @@
+{
+  "includes": {
+    "/people": "people.json",
+    "/facilities": "facilities.json",
+    "/projects": "projects.json",
+    "/areas": "areas.json",
+    "/publications": "publications.json"
+  },
+  "GET": {
+    "/": {
+      "controller": "IndexController",
+      "action": "index",
+      "protected": false
+    },
+    "/contact": {
+      "controller": "IndexController",
+      "action": "contact"
+    },
+    "/conferences": {
+      "controller": "IndexController",
+      "action": "conferences"
+    }
+  }
+}

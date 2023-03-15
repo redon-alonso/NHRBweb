@@ -1,0 +1,12 @@
+{
+  "GET": {
+    "/index": {
+      "controller": "PeopleController",
+      "action": "index"
+    },
+    "/show/:id": {
+      "controller": "PeopleController",
+      "action": "show"
+    }
+  }
+}

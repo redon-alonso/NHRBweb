@@ -1,0 +1,63 @@
+{% extends "layout/body.html" %}
+{% block main %}
+<section class="clean-block clean-services dark">
+  <div class="container">
+    <div class="block-heading pt-0">
+      <h2 class="text-left text-primary mb-0">Current projects</h2>
+      <hr class="mt-0">
+    </div>
+
+    <div class="justify-content-center row" >
+      {% for project in projects %} {% if project.get_current_project %}
+      <div class="col-lg-4 col-md-4 mb-3">
+        <div class="card h-100" >
+
+          <!-- NO PORJECT IMAGES
+          <a href="/projects/show/{{project.get.idproject}}" class="card-img-top pl-1 pr-1 pt-1" >
+            <img src="{{ project.get_logo }}" alt="..." width="700" height="480" class="img-fluid"/>
+          </a>
+          -->
+
+          <div class="card-body">
+            <a href="/projects/show/{{ project.get_idproject }}" class="text-dark text-decoration-none">
+              <h3 class="card-title h5 text-center">{{ project.get_acronym }}</h3>
+            </a>
+            <hr class="bg-primary">
+            <p class="text-justify">{{ project.get_title }}</p>
+          </div>
+          <div class="card-footer d-flex justify-content-between pb-2 pl-3 pr-3 pt-2 small" >
+            <span class="mb-auto mt-auto small">{{ project.get_years }}</span>
+            <a href="/projects/show/{{ project.get_idproject }}" class="btn btn-outline-primary">More</a>
+          </div>
+        </div>
+      </div>
+      {% endif %} {% endfor %}
+    </div>
+
+    <div class="pt-5">
+      <h2 class="text-left text-primary mb-0">Others projects</h2>
+      <hr class="mt-0">
+    </div>
+
+    <div class="justify-content-center row" >
+      {% for project in projects %} {% if project.get_current_project == 0 %}
+      <div class="col-lg-4 col-md-4 mb-3">
+        <div class="card h-100" >
+          <div class="card-body">
+            <a href="/projects/show/{{ project.get_idproject }}" class="text-dark text-decoration-none">
+              <h3 class="card-title ml-1 h5 text-center">{{ project.get_acronym }}</h3>
+            </a>
+            <hr class="bg-primary">
+            <p class="text-justify">{{ project.get_title }}</p>
+          </div>
+          <div class="card-footer d-flex justify-content-between pb-2 pl-3 pr-3 pt-2 small" >
+            <span class="mb-auto mt-auto small">{{ project.get_years }}</span>
+            <a href="/projects/show/{{ project.get_idproject }}" class="btn btn-outline-primary">More</a>
+          </div>
+        </div>
+      </div>
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,141 @@
+{% extends "layout/body.html" %} {% block header %}
+<div class="mt-5" style="padding-top: 4.5rem">
+  <h1 class="display-4 text-center text-dark">Areas</h1>
+</div>
+{% endblock %} {% block main %}
+<section class="clean-block clean-faq dark">
+  <div class="container">
+    <div style="padding-top: 0px; margin-top: 60px">
+      <h1 class="display-4 text-left text-dark" style="margin: 7px; margin-bottom: -9.8px; margin-left: -4px">
+        Technological research
+      </h1>
+      <hr />
+      <div class="d-flex justify-content-end faq-item" style="margin-bottom: 0px">
+        <em class="paFacilities" style="font-size: 25px">
+          <p>
+            Technological research oriented toward engineering disciplines has developed tools, equipment and procedures
+            that have helped to overcome some limitations of traditional approaches and even have provided solutions to
+            specific problems.<br /><br />
+            Most of our studies involve the application of new technologies, such as (but not only) virtual reality, to
+            old problems in neurorehabilitation and basic neuroscience. However, we have put special efforts on
+            examining the characteristics of the technological solutions and how it affects to the users’ performance,
+            and, although it is not our goal, we have also developed technology-driven solutions to overcome specific
+            problems that we have faced in our research.
+          </p>
+        </em>
+      </div>
+    </div>
+    <div class="shadow-none block-content">
+      <div class="faq-item">
+        <div style="margin-top: 38px">
+          <h4 class="question" style="font-size: 24px"><strong>Walking in virtual reality</strong><br /></h4>
+          <hr />
+          <p style="font-size: 22px">
+            Even though virtual reality is increasingly used in rehabilitation, the implementation of walking navigation
+            in virtual reality still poses a technological challenge for current motion tracking systems. Different
+            metaphors simulate locomotion without involving real gait kinematics, which can affect presence,
+            orientation, spatial memory and cognition, and even performance. All these factors can dissuade their use in
+            rehabilitation. To make walking in virtual reality a reality we designed a marker-based head tracking
+            solution that estimates the location of the head in a room-size environment from the position of fiducial
+            markers attached to the ceiling.
+          </p>
+          <br />
+        </div>
+        <div class="d-flex justify-content-center align-content-center">
+          <iframe width="631" height="355" src="https://www.youtube.com/embed/jsfBqfy00TQ" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div style="margin-top: 38px">
+          <p style="font-size: 22px">
+            A feasibility study was conducted to determine the accuracy, the jitter, and the lag of the tracking system
+            and its elicited sickness and presence in comparison of a CAVE system.<sup><a href="#References"
+                style="color: red">1</a></sup>
+            The accuracy and the jitter around the working area at three different heights and the lag of the head
+            tracking system were analyzed. In addition, forty-seven healthy subjects completed a search task that
+            involved navigation in the walking virtual reality system and in the CAVE system. Navigation was enabled by
+            natural locomotion in the walking virtual reality system and through a specific device in the CAVE system.
+            An HMD was used as display in the walking virtual reality system. After interacting with each system,
+            subjects rated their sickness and their presence. Better performance was registered at higher heights, where
+            accuracy was less than 0.6 cm and the jitter was about 6 mm. The lag of the system was 120 ms. Participants
+            reported that both systems caused similar low levels of sickness. However, ratings showed that the walking
+            virtual reality system elicited higher sense of presence than the CAVE system.<br /><br />
+
+            The marker-based solution provides accurate, robust, and fast head tracking to allow navigation in the
+            virtual reality system by walking without causing relevant sickness and promoting higher sense of presence
+            than CAVE systems, thus enabling natural walking in full-scale environments, which can enhance the
+            ecological validity of virtual reality-based rehabilitation applications.<br />
+          </p>
+        </div>
+        <div style="margin-top: 38px">
+          <h4 class="question" style="font-size: 24px"><strong>Motion tracking systems</strong><br /></h4>
+          <hr />
+          <p style="font-size: 22px">
+            Motion tracking systems are commonly used in virtual reality-based interventions to detect movements in the
+            real world and transfer them to the virtual environment. There are different tracking solutions based on
+            different physical principles, which mainly define their performance parameters. However, special
+            requirements have to be considered for rehabilitation purposes. We compared the accuracy and jitter of three
+            tracking solutions (optical, electromagnetic, and skeleton tracking) in a practical scenario and analyzed
+            the subjective perceptions of 19 healthy subjects, 22 stroke survivors, and 14 physical therapists.<sup><a
+                href="#References" style="color: red">2</a></sup>
+          </p>
+          <br />
+          <div class="d-flex justify-content-center align-content-center">
+            <img class="d-block" style="width: 600px" src="/resources/uploads/project/areas/1-tecno.png" />
+          </div>
+        </div>
+        <div style="margin-top: 38px">
+          <p style="font-size: 22px">
+            With regards to the objective parameters, a practical scenario was designed to consider the effect of
+            distance in the tracking performance. A 6 × 6 grid with 25 cm × 25 cm squares was designed and printed on a
+            plastic sheet that was fixed to the floor, covering an area of 1.5 m2. The right ankle joint (tibiotalar) of
+            an experimenter was fixed in all the intersection points of the grid (49 in total) using a cast. The
+            position of the joint was estimated by the different tracking systems during 5 s
+          </p>
+          <p style="font-size: 22px">
+            With regards to the subjective parameters, three different configurations of a virtual reality-based system
+            with a stepping exercise<sup><a href="#References" style="color: red">3</a></sup> (see
+            <a href="/areas/show/balance" style="color: blue">Balance</a>) using the three different tracking systems were
+            installed in the physical therapy area of a neurorehabilitation unit in a large metropolitan hospital. The
+            experiences with the three tracking systems of healthy individuals, individuals with stroke, and therapists
+            were collected through two ad-hoc questionnaires.<br />
+          </p>
+          <p style="font-size: 22px">
+            The optical tracking system provided the best accuracy while the electromagnetic device provided the most
+            inaccurate results. However, this tracking solution provided the best jitter values, in contrast to the
+            skeleton tracking, which had the worst results. Healthy individuals and professionals preferred the skeleton
+            tracking solution rather than the optical and electromagnetic solution (in that order). Individuals with
+            stroke chose the optical solution over the other options. Our results show that subjective perceptions and
+            preferences are far from being constant among different populations, thus suggesting that these
+            considerations, together with the performance parameters, should be also taken into account when designing a
+            rehabilitation system.<br />
+          </p>
+        </div>
+        <div style="margin-top: 38px" id="References">
+          <h4 class="question" style="font-size: 24px"><strong>References</strong><br /></h4>
+          <hr />
+          <ol>
+            <li>
+              Borrego A., Latorre J., Llorens R., Alcañiz M., Noé E. Feasibility of a walking virtual reality system for
+              rehabilitation: objective and subjective parameters. Journal of NeuroEngineering and Rehabilitation, 2016.
+              In press
+            </li>
+            <li>
+              Llorens R., Noé E., Naranjo V., Borrego A., Latorre J., Alcañiz M. Tracking Systems for Virtual
+              Rehabilitation: Objective Performance vs. Subjective Experience. A Practical Scenario. Sensors, 2015,
+              15(3), 6586-6606.
+            </li>
+            <li>
+              Llorens R., Gil-Gómez J., Alcañiz M., Colomer C., Noé E. Improvement of balance using a virtual reality
+              based stepping exercise: a randomized controlled trial involving individuals with chronic stroke. Clinical
+              Rehabilitation, 2015. 29(3):261-8.
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

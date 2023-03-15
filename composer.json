@@ -1,0 +1,21 @@
+{
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "require": {
+    "twig/twig": "^3.3",
+    "doctrine/orm": "^2.11",
+    "symfony/cache": "^5.4",
+    "doctrine/annotations": "^1.13",
+    "doctrine/common": "^3.2",
+    "twig/markdown-extra": "^3.3",
+    "erusev/parsedown": "^1.7"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/package-versions-deprecated": true
+    }
+  }
+}

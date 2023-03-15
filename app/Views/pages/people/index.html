@@ -1,0 +1,168 @@
+{% extends "layout/body.html" %} {% block main %}
+<section>
+  <div>
+    <h2 class="text-primary mb-0">Team members</h2>
+    <hr class="mt-0">
+
+    <div class="row justify-content-center">
+      {% for user in users %}
+      <div class="col-lg-4 col-md-4 mb-3">
+        <div class="card h-100">
+          {% if user.get_orcid_link %}
+          <img class="card-img-top" src="{{ user.get_photo_link }}" />
+          {% else %}
+          <img class="card-img-top" src="/resources/users/Kenny_sin_capucha.png"
+            />
+          {% endif %}
+          <div class="card-body pb-0">
+            <h4 class="card-title text-center">{{ user.get_name }}</h4>
+            <p class="card-text text-center"><span class="me-2">{{
+                user.get_education }}</span>{{ user.get_position }}</p>
+
+          </div>
+          <div class="card-footer  px-3 py-2
+            small">
+            <div class="row">
+              <div class=" col-9 ">
+                
+                  {% if user.get_orcid_link %}
+                  <a class="my-auto" href="{{ user.get_orcid_link }}"><img
+                      src="/resources/uploads/project/icons/orcid_icon.png"
+                      style="width: 31px; margin-right: 11px" /></a>
+                  {% endif %} {% if user.get_scholar_link %}
+                  <a class="my-auto" href="{{ user.get_scholar_link }}"><img
+                      src="/resources/uploads/project/icons/scholar.png"
+                      style="width:
+                      31px; margin-right: 11px" /></a>
+                  {% endif %}
+                  {% if user.get_researchgate_link %}
+                  <a class="my-auto" href="{{ user.get_researchgate_link }}">
+                    <img
+                      src="/resources/uploads/project/icons/researchgate_icon.png"
+                      style="width: 31px; margin-right: 11px" />
+                  </a>
+                  {% endif %}
+                  {% if user.get_linkedin_link %}
+                  <a class="my-auto" href="{{ user.get_linkedin_link }}"><img
+                      src="/resources/uploads/project/icons/linkedin_icon.png"
+                      style="width: 31px; margin-right: 11px" /></a>
+                  {% endif %}
+
+
+              </div>
+              <div class=" col-3">
+
+                  <a class="btn btn-outline-primary float-right"
+                    href="/people/show/{{
+                    user.get_iduser }}">More</a>
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section>
+  <div>
+    <h2 class="text-primary mb-0">Former members</h2>
+    <hr class="mt-0">
+
+    <!-- START accordion -->
+    <div class="accordion" id="accordionMembers">
+      {% set first = true %}
+      {% for former in formers|sort((a, b) => a.get_group <=> b.get_group) %}
+
+        {# empieza item #}
+        {% if first %}
+        {% set first = false %}
+        {# Lógica título #}
+        {% if former.get_group == 1 %}
+        {% set titulo = 'PhD students' %}
+        {% elseif former.get_group == 2 %}
+        {% set titulo = 'Master\'s thesis and bechelor\'s students' %}
+        {% elseif former.get_group == 3 %}
+        {% set titulo = 'Estancias' %}
+        {% else %}
+        {% set titulo = 'Internships' %}
+        {% endif %}
+
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading{{loop.index0}}">
+            <button class="fw-bold accordion-button {% if loop.index0 !=
+              1 %}collapsed{% endif %}" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse{{loop.index0}}" aria-expanded="true"
+              aria-controls="collapse{{loop.index0}}">
+              {{ titulo }}
+            </button>
+          </h2>
+          <div id="collapse{{loop.index0}}" class="accordion-collapse collapse
+            {% if former.get_group == 1 %}show{% endif %}"
+            aria-labelledby="heading{{loop.index0}}"
+            data-bs-parent="#accordionMembers">
+            <div class="accordion-body">
+
+              <ul>
+                {% endif %}
+
+                <li>{{ former.get_name }}. {{ former.get_education }}, {{
+                  former.get_year }}. Tesis: {{ former.get_link }}</li>
+
+                {# si el siguiente elemento tiene grupo diferente cerrar item y
+                first a false #}
+                {% if formers[loop.index0].get_group !=
+                formers[loop.index].get_group %}
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+        {% set first = true %}
+        {% endif %}
+
+        {% endfor %}
+      </div>
+      <!-- END accordion -->
+
+    </div>
+  </section>
+
+  <section>
+    <div class="mt-5">
+      <h2 class="text-primary mb-0">Collaborators</h2>
+      <hr class="mt-0">
+
+      <div class="row pt-2 justify-content-center" style="background-image:
+        url('/resources/uploads/img/bricks.svg');">
+        {% for collaborator in collaborators %}
+        <div class="col-lg-4 col-md-4 mb-3">
+          <div class="card h-100">
+            <a href="{{ collaborator.get_company_link }}">
+              <!-- <img class="card-img-top" src="{{ collaborator.get_logo_link }}" style="background: var(--light);"> -->
+              <img class="card-img-top" src="{{ collaborator.get_logo_link }}"
+                style="background: var(--light)" />
+            </a>
+            <div class="card-body">
+              <h4 class="card-title text-center">{{ collaborator.get_name }}</h4>
+              <p class="card-text">{{ collaborator.get_contact }}</p>
+            </div>
+            <div class="card-footer px-3 py-2 d-flex">
+              <a class="h3 ms-auto" href="{{ collaborator.get_company_link }}">
+                <i class="bi bi-box-arrow-up-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endblock %}

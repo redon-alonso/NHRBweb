@@ -1,0 +1,68 @@
+<div class="bg-light p-3 border">
+  <div class="row">
+    <div class="col-md-11">
+      <h3 class="h6 fw-bold">{{ publication.get_title }}</h3>
+
+      <!-- data -->
+      <h4 class="ms-4 small">
+        <span class="fw-bold text-primary small">Authors: </span>
+        {{ publication.get_authors }}
+      </h4>
+
+      <h4 class="ms-4 small">
+        <span class="fw-bold text-primary small">Journal: </span>
+        {{ publication.get_journal }}
+      </h4>
+
+      <h4 class="ms-4 small">
+        <span class="fw-bold text-primary small">Year: </span>
+        {{ publication.get_year }}
+      </h4>
+      <!-- end data -->
+
+      <!-- tags -->
+      {% if publication.get_idtag %}
+      <div class="mt-1 text-center">
+
+        {% for tag in publication.get_idtag %}
+        <div class="d-inline-block">
+          {% if tag.get_area_link %}
+          <div class="d-inline-block"
+            style="color: {{ tag.get_color }};background: {{ tag.get_color }};width: 15px;height: 15px;border-radius: 4px;opacity: 0.70;">
+          </div>
+          <a href="{{ tag.get_area_link }}">
+            <span class="small text-primary">
+              {{ tag.get_name }}
+            </span>
+          </a>
+          {% else %}
+          <div class="d-inline-block"
+            style="color: {{ tag.get_color }};background: {{ tag.get_color }};width: 15px;height: 15px;border-radius: 4px;opacity: 0.70;">
+          </div>
+          <span class="small text-primary">
+            {{ tag.get_name }}
+          </span>
+          {% endif %}
+        </div>
+        {% endfor %}
+
+      </div>
+      {% endif %}
+      <!-- end tags -->
+
+    </div>
+    <div class="col">
+      <div class="text-end">
+        <a class="h2 d-md-block" onclick="copyClipboard('{{ publication.get_cite }}')">
+          <i class="bi bi-quote"></i>
+        </a>
+        <a class="h2 d-md-block" href="{{ publication.get_download_link }}">
+          <i class="bi bi-cloud-arrow-down-fill"></i>
+        </a>
+        <a class="h2 d-md-block" href="{{ publication.get_access_link }}">
+          <i class="bi bi-box-arrow-up-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

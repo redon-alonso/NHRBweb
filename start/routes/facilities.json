@@ -1,0 +1,8 @@
+{
+  "GET": {
+    "/index": {
+      "controller": "FacilitiesController",
+      "action": "index"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "server": "127.0.0.1",
+  "user": "nrhb",
+  "password": "nrhbpass",
+  "dbname": "nrhb",
+  "driver": "pdo_mysql",
+  "port": "3306"
+}

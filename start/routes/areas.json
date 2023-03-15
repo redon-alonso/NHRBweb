@@ -1,0 +1,12 @@
+{
+  "GET": {
+    "/index": {
+      "controller": "AreasController",
+      "action": "index"
+    },
+    "/show/:name": {
+      "controller": "AreasController",
+      "action": "show"
+    }
+  }
+}

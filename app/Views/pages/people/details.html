@@ -1,0 +1,109 @@
+{% extends "layout/body.html" %}
+
+{% block header %}
+<div class="mt-5">
+  <h1 class="display-4 text-center text-primary mb-5" style="margin: 7px;margin-left: -4px;">Team member</h1>
+  <!-- <div class="block-heading text-center pt-4"> -->
+  <!--   <h2 class="text-company">Team Member</h2> -->
+  <!-- </div> -->
+<div>
+{% endblock %}
+
+{% block main %}
+<section class="clean-block clean-blog-list dark">
+  <div class="container">
+    <div class="block-content">
+      <div class="clean-blog-post pb-5">
+
+        <div class="row">
+          <div class="col-lg-5 justify-content-center align-content-center text-center">
+            <img class="rounded img-fluid" src="{{ user.get_photo_link }}" alt="Worker photography">
+            <!-- <div style="margin-top: 32px;"></div> -->
+          </div>
+          <div class="col-lg-3  justify-content-left  align-content-left text-left">
+            <h3 style="font-size: 21.8px;">{{ user.get_name }}</h3>
+            <div class="info">
+              <p><span class="text-muted" style="font-size: 20px;">{{ user.get_education }}      {{ user.get_position }}</span></p>
+
+              {% if user.get_orcid_link %}
+              <a class="my-auto" href="{{ user.get_orcid_link }}"><img
+                  src="/resources/uploads/project/icons/orcid_icon.png"
+                  style="width: 31px; margin-right: 11px" /></a>
+              {% endif %} {% if user.get_scholar_link %}
+              <a class="my-auto" href="{{ user.get_scholar_link }}"><img
+                  src="/resources/uploads/project/icons/scholar.png"
+                  style="width:
+                  31px; margin-right: 11px" /></a>
+              {% endif %}
+              {% if user.get_researchgate_link %}
+              <a class="my-auto" href="{{ user.get_researchgate_link }}">
+                <img
+                  src="/resources/uploads/project/icons/researchgate_icon.png"
+                  style="width: 31px; margin-right: 11px" />
+              </a>
+              {% endif %}
+              {% if user.get_linkedin_link %}
+              <a class="my-auto" href="{{ user.get_linkedin_link }}"><img
+                  src="/resources/uploads/project/icons/linkedin_icon.png"
+                  style="width: 31px; margin-right: 11px" /></a>
+              {% endif %}
+            </div>
+
+            <!-- tags -->
+            {% if user.get_idtag %}
+            <div>
+              <div class="d-inline-flex flex-wrap align-items-xl-center justify-content-start" style="margin-top: 17px; margin-right: 1rem;">
+
+                {% for tag in user.get_idtag %}
+                <div class="justify-content-center align-items-center d-inline-flex align-content-center" style="margin-right: 9px;">
+                  {% if tag.get_area_link %}
+                  <div style="color: {{ tag.get_color }};background: {{ tag.get_color }};width: 15px;height: 15px;border-radius: 4px;opacity: 0.70;"></div>
+                    <a href="{{ tag.get_area_link }}">
+                      <span class="tags-color" style="color: #ed196d;opacity: 0.90;">{{ tag.get_name }}</span>
+                    </a>
+                  {% else %}
+                  <div style="color: {{ tag.get_color }};background: {{ tag.get_color }};width: 15px;height: 15px;border-radius: 4px;opacity: 0.70;"></div>
+                    <span class="tags-color" style="color: #ed196d;opacity: 0.90;">{{ tag.get_name }}</span>
+                  {% endif %}
+                </div>
+                {% endfor %}
+
+              </div>
+            </div>
+            {% endif %}
+            
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="mb-0 text-primary">Description</h4>
+        <hr class="mt-0">
+
+        <div class="mx-2 text-justify">
+          <p> {{ user.get_description | markdown_to_html }}</p>
+        </div>
+      </div>
+
+      <div>
+        {% if user.get_idsubject %}
+        <h4 class="mb-0 text-primary">Subjects</h4>
+        <hr class="mt-0">
+        <ul>
+          {% for subject in user.get_idsubject %}
+          {% if subject.get_active %}
+          <li>
+            <p style="">
+            {{ subject.get_name }}. {{ subject.get_center }}. {{ subject.get_credits }}. {{ subject.get_year }}
+            </p>
+          </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+{% endblock %}

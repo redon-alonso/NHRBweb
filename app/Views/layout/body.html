@@ -1,0 +1,27 @@
+{% extends "layout/base.html" %}
+
+{% block body %}
+
+<nav class="fixed-top bg-white navbar navbar-expand-lg navbar-light py-lg-1 text-uppercase shadow-sm" data-pg-collapsed>
+  {% include 'layout/partials/navigation.html' %}
+</nav>
+
+<div class="container bg-white">
+  <header class="mt-5 pt-4">
+  {% block header %}
+    {% include 'layout/partials/heading.html' %}
+  {% endblock %}
+  </header>
+
+  <main class="pb-5">
+  {% block main %}{% endblock %}
+  </main>
+</div>
+
+<footer class="border border-bottom-0 border-left-0 border-right-0 pt-5">
+  {% include 'layout/partials/footer.html' %}
+</footer>
+
+{% block extraScript %}{% endblock %}
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{
+  "GET": {
+    "/index": {
+      "controller": "PublicationsController",
+      "action": "index"
+    },
+    "/index/:page": {
+      "controller": "PublicationsController",
+      "action": "index"
+    },
+    "/show/:id": {
+      "controller": "PublicationsController",
+      "action": "show"
+    }
+  }
+}
